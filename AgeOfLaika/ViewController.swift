@@ -36,6 +36,19 @@ class ViewController: UIViewController {
         humanYearsTextBox.resignFirstResponder()
         
     }
+    @IBAction func convertToRealDogYearsButtonPressed(sender: UIButton) {
+        let humanYrs = Double((humanYearsTextBox.text as NSString).doubleValue)
+        var dogYrs:Double
+        if (humanYrs > 2) {
+           dogYrs = (10.5 * 2) + ((humanYrs - 2) * 4)
+        } else {
+            dogYrs = humanYrs * 10.5
+        }
+        dogYearsLabel.text = "\(dogYrs)"
+        dogYearsLabel.hidden = false
+        humanYearsTextBox.text = ""
+        humanYearsTextBox.resignFirstResponder()
+    }
 
 }
 
